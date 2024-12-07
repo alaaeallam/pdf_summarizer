@@ -6,7 +6,7 @@ from langchain_ollama import ChatOllama
 from langdetect import detect
 
 # Initialize LLM
-base_url = "https://we-finance.streamlit.app"
+base_url = "https://we-finance.streamlit.app:11434"
 model = 'llama3.2:3b'
 llm = ChatOllama(base_url=base_url, model=model)
 
