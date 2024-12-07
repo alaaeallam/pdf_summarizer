@@ -1,1 +1,6 @@
 streamlit
+langchain-community
+langchain-core
+langchain-ollama
+langdetect
+pymupdf
