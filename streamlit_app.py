@@ -6,7 +6,7 @@ from langchain_ollama import ChatOllama
 from langdetect import detect
 import warnings
 
-# Suppress specific warnings about empty content
+# Suppress warnings about empty content in PDF
 warnings.filterwarnings("ignore", message="Warning: Empty content on page")
 
 # Initialize LLM
@@ -88,6 +88,7 @@ if uploaded_file:
                 st.stop()
 
             # Generate summary
+            st.write("Generating summary...")
             response = summary_chain.invoke({'context': context, 'words': words})
             st.subheader("Summary")
             st.write(response)
@@ -136,6 +137,7 @@ if uploaded_file:
                 st.stop()
 
             # Generate answer
+            st.write("Generating answer...")
             answer = qna_chain.invoke({'context': context, 'question': question})
             st.subheader("Answer")
             st.write(answer)
